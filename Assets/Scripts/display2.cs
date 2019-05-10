@@ -17,6 +17,6 @@ public class display2 : MonoBehaviour
 
     void Update() // update score GUI every frame
     {
-        displayScore.text = "Score: " + controller.GetComponent<control_3>().winstreak.ToString();
+        displayScore.text = controller.GetComponent<control_3>().winstreak.ToString();
     }
 }
