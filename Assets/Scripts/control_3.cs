@@ -10,9 +10,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Porter Libby
-// Colorshift 2019
-
 public class control_3 : MonoBehaviour
 {
     public GameObject[] squares;
@@ -30,7 +27,7 @@ public class control_3 : MonoBehaviour
     public float roundScale = 0.01f; //rate at which speed goes up
 
     public bool running = true; // is game timer running
-    
+
     public int target_square = 0;
     public int winstreak = 0;
 
