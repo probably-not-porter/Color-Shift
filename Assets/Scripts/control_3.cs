@@ -26,7 +26,7 @@ public class control_3 : MonoBehaviour
     public float roundTime = 5.0f;
     public float roundScale = 0.01f; //rate at which speed goes up
 
-    public bool running = true; // is game timer running
+    public bool running = false; // is game timer running
 
     public int target_square = 0;
     public int winstreak = 0;
@@ -94,14 +94,13 @@ public class control_3 : MonoBehaviour
     void WinGame()
     {
         Debug.Log("You Win");
-        running = false;
         //do other stuff
         winstreak++;
 
         Reload();
     }
 
-    void Reload() // reload the game screen reset all vars except streak
+    public void Reload() // reload the game screen reset all vars except streak
     {
         int color1_num = Random.Range(0, colors.Length);
         int color2_num = Random.Range(0, colors2.Length);
@@ -121,7 +120,6 @@ public class control_3 : MonoBehaviour
         }
         roundTime = targetTime;
         
-        running = true;
         target_square = Random.Range(0, squares.Length);
         for (int x = 0; x < squares.Length; x++)
         {

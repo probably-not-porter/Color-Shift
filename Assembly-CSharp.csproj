@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\display3.cs" />
      <Compile Include="Assets\Scripts\displayBar.cs" />
      <Compile Include="Assets\Scripts\pauseGame.cs" />
+     <Compile Include="Assets\Scripts\screenControl.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/porter/colorShift/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

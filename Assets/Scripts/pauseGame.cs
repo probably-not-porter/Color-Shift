@@ -13,14 +13,21 @@ using UnityEngine.UI;
 public class pauseGame : MonoBehaviour
 {
     public GameObject controller; // game controller
-    public bool gameState; 
+    public bool gameState = true; 
     public Sprite pause_image;
     public Sprite play_image;
     
 
     public void togglePause() // invert game state on click
     {
-        if (GetComponent<Image>().sprite == pause_image)
+        Debug.Log("pause");
+        gameState = !gameState;
+        controller.GetComponent<control_3>().running = gameState;
+    }
+    void Update()
+    {
+        gameState = controller.GetComponent<control_3>().running;
+        if (gameState != true)
         {
             GetComponent<Image>().sprite = play_image;
         }
@@ -28,10 +35,5 @@ public class pauseGame : MonoBehaviour
         {
             GetComponent<Image>().sprite = pause_image;
         }
-        
-        Debug.Log("pause");
-        gameState = controller.GetComponent<control_3>().running;
-        gameState = !gameState;
-        controller.GetComponent<control_3>().running = gameState;
     }
 }
