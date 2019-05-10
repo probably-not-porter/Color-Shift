@@ -1,20 +1,21 @@
-﻿using System.Collections;
+﻿// -----
+//
+// Porter Libby
+// Color Shift 2019
+//
+// -----
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class display : MonoBehaviour
 {
-    public Text displayTime;
-    public GameObject controller;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Text displayTime; // display object
+    public GameObject controller; // game controller
 
-    // Update is called once per frame
-    void Update()
+    void Update() // update time GUI every second
     {
         displayTime.text = System.Math.Round(controller.GetComponent<control_3>().targetTime * 10).ToString();
     }
