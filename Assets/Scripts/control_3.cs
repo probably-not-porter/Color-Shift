@@ -16,12 +16,12 @@ using UnityEngine.UI;
 public class control_3 : MonoBehaviour
 {
     public GameObject[] squares;
-    private Color color1 = Color.red;    // starting color
-    private Color color2 = Color.blue;   // majority color
-    private Color color3 = Color.green;  // odd color
+    private Color color1 = Color.red;    // default val starting color
+    private Color color2 = Color.blue;   // default val majority color
+    private Color color3 = Color.green;  // default val target color
 
-    public Color[] colors;
-    public Color[] colors2;
+    public Color[] colors; // color array 1
+    public Color[] colors2; // color array 2
 
     public float targetTime = 10.0f; // starting time per round
     public float maxTime = 10.0f;
@@ -29,7 +29,8 @@ public class control_3 : MonoBehaviour
     public float roundTime = 5.0f;
     public float roundScale = 0.01f; //rate at which speed goes up
 
-    public bool running = true;
+    public bool running = true; // is game timer running
+    
     public int target_square = 0;
     public int winstreak = 0;
 
@@ -74,6 +75,35 @@ public class control_3 : MonoBehaviour
         }
     }
 
+    void timerEnded() // player ran out of time to chose
+    {
+        LoseGame();
+    }
+
+    void ChangeColor(Color color,GameObject button)
+    {
+        button.GetComponent<Image>().color = color;
+    }
+
+    void LoseGame()
+    {
+        Debug.Log("You lost");
+        winstreak = 0;
+        //play again prompt
+        Reload();
+        roundTime = maxTime;
+    }
+
+    void WinGame()
+    {
+        Debug.Log("You Win");
+        running = false;
+        //do other stuff
+        winstreak++;
+
+        Reload();
+    }
+
     void Reload() // reload the game screen reset all vars except streak
     {
         int color1_num = Random.Range(0, colors.Length);
@@ -96,16 +126,15 @@ public class control_3 : MonoBehaviour
         
         running = true;
         target_square = Random.Range(0, squares.Length);
-        Debug.Log(target_square);
         for (int x = 0; x < squares.Length; x++)
         {
             ChangeColor(color1,squares[x]);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // UPDATE SQUARE COLORS
         for (int x = 0; x < squares.Length; x++)
         {
             if (x == target_square)
@@ -119,6 +148,8 @@ public class control_3 : MonoBehaviour
                 ChangeColor( new_color, squares[x]);
             }
         }
+
+        // CHECK TO SEE IF TIMER HAS RUN OUT
         if (running == true){
             targetTime -= Time.deltaTime;
         }
@@ -129,31 +160,5 @@ public class control_3 : MonoBehaviour
             timerEnded();
         }
     }
-    void timerEnded() // player ran out of time to chose
-    {
-        LoseGame();
-    }
 
-    void ChangeColor(Color color,GameObject button)
-    {
-        button.GetComponent<Image>().color = color;
-    }
-
-    void LoseGame()
-    {
-        Debug.Log("You lost");
-        winstreak = 0;
-        //play again prompt
-        Reload();
-        roundTime = maxTime;
-    }
-    void WinGame()
-    {
-        Debug.Log("You Win");
-        running = false;
-        //do other stuff
-        winstreak++;
-
-        Reload();
-    }
 }
