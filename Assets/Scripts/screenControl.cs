@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿// -----
+//
+// Porter Libby
+// Color Shift 2019
+//
+// -----
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,7 +41,8 @@ public class screenControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        menuPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(menuX,0f);
+        // UPDATE POSITIONS OF SCREENS IF NECISSARY
+        menuPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(menuX,0f); 
         threePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(threeX,0f);
     }
 }
