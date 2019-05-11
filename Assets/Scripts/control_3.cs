@@ -15,6 +15,8 @@ public class control_3 : MonoBehaviour
     public GameObject[] squares;
     public GameObject gameControl; // top level
 
+    public GameObject spawner; // spawn point hints
+
     private Color color1 = Color.red;    // default val starting color
     private Color color2 = Color.blue;   // default val majority color
     private Color color3 = Color.green;  // default val target color
@@ -104,6 +106,7 @@ public class control_3 : MonoBehaviour
         Debug.Log("You Win");
         //do other stuff
         winstreak++;
+        spawner.GetComponent<produce_numbers>().create1();
 
         Reload();
     }

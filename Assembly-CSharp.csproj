@@ -55,6 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\number_float.cs" />
+     <Compile Include="Assets\produce_numbers.cs" />
      <Compile Include="Assets\Scripts\control_3.cs" />
      <Compile Include="Assets\Scripts\display.cs" />
      <Compile Include="Assets\Scripts\display2.cs" />
