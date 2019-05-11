@@ -13,6 +13,8 @@ using UnityEngine.UI;
 public class control_3 : MonoBehaviour
 {
     public GameObject[] squares;
+    public GameObject gameControl; // top level
+
     private Color color1 = Color.red;    // default val starting color
     private Color color2 = Color.blue;   // default val majority color
     private Color color3 = Color.green;  // default val target color
@@ -68,13 +70,19 @@ public class control_3 : MonoBehaviour
         }
         else
         {
-            LoseGame();
+            if (gameControl.GetComponent<screenControl>().activescreen == 1)
+            {
+                gameControl.GetComponent<screenControl>().activescreen = 3;
+            }
         }
     }
 
     void timerEnded() // player ran out of time to chose
     {
-        LoseGame();
+        if (gameControl.GetComponent<screenControl>().activescreen == 1)
+        {
+            gameControl.GetComponent<screenControl>().activescreen = 3;
+        }
     }
 
     void ChangeColor(Color color,GameObject button)
@@ -82,7 +90,7 @@ public class control_3 : MonoBehaviour
         button.GetComponent<Image>().color = color;
     }
 
-    void LoseGame()
+    public void LoseGame()
     {
         Debug.Log("You lost");
         winstreak = 0;
