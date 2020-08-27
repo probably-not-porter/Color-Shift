@@ -70,6 +70,7 @@ public class screenControl : MonoBehaviour
         {
             menuPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(onScreen,0f); 
             threePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen,0f);
+            fourPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             pausePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             losePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
         }
@@ -77,6 +78,7 @@ public class screenControl : MonoBehaviour
         {
             menuPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen,0f); 
             threePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen,0f);
+            fourPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             pausePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(onScreen, 0f);
             losePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
         }
@@ -84,6 +86,7 @@ public class screenControl : MonoBehaviour
         {
             menuPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen,0f); 
             threePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen,0f);
+            fourPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             pausePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             losePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(onScreen, 0f);
         }
@@ -91,13 +94,15 @@ public class screenControl : MonoBehaviour
         {
             menuPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             threePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(onScreen, 0f);
+            fourPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             pausePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             losePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
         }
         else if (activescreen == 4) // 4x4 game
         {
             menuPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
-            threePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(onScreen, 0f);
+            threePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
+            fourPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(onScreen, 0f);
             pausePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
             losePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
         }
