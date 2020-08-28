@@ -17,9 +17,9 @@ public class display3 : MonoBehaviour
     public int highScore = 0;
     void Start()
     {
-        if (PlayerPrefs.HasKey("highScore"))
+        if (PlayerPrefs.HasKey("3x3 highScore"))
         {
-            highScore = PlayerPrefs.GetInt("highScore");
+            highScore = PlayerPrefs.GetInt("3x3 highScore");
         }
     }
     void Update() //check for new highscore, if so update
@@ -27,7 +27,7 @@ public class display3 : MonoBehaviour
         if (controller.GetComponent<control_3>().winstreak > highScore)
         {
             highScore = controller.GetComponent<control_3>().winstreak;
-            PlayerPrefs.SetInt("highScore", highScore);
+            PlayerPrefs.SetInt("3x3 highScore", highScore);
         }
         displayScore.text = "Best: " + highScore.ToString();
     }
