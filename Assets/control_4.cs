@@ -57,6 +57,13 @@ public class control_4 : MonoBehaviour
         squares[6].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(6); });
         squares[7].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(7); });
         squares[8].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(8); });
+        squares[9].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(9); }); //do this badly because the loop isnt working ???
+        squares[10].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(10); });
+        squares[11].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(11); });
+        squares[12].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(12); });
+        squares[13].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(13); });
+        squares[14].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(14); });
+        squares[15].GetComponent<Button>().onClick.AddListener(delegate { ButtonHandle(15); });
 
         for (int x = 0; x < squares.Length; x++)
         {
@@ -72,18 +79,18 @@ public class control_4 : MonoBehaviour
         }
         else
         {
-            if (gameControl.GetComponent<screenControl>().activescreen == 1)
+            if (gameControl.GetComponent<screenControl>().activescreen == 4)
             {
-                gameControl.GetComponent<screenControl>().activescreen = 3;
+                gameControl.GetComponent<screenControl>().activescreen = 2;
             }
         }
     }
 
     void timerEnded() // player ran out of time to chose
     {
-        if (gameControl.GetComponent<screenControl>().activescreen == 1)
+        if (gameControl.GetComponent<screenControl>().activescreen == 4)
         {
-            gameControl.GetComponent<screenControl>().activescreen = 3;
+            gameControl.GetComponent<screenControl>().activescreen = 2;
         }
     }
 

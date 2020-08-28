@@ -63,6 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\control_4.cs" />
+    <Compile Include="Assets\display2_2.cs" />
+    <Compile Include="Assets\display3_2.cs" />
+    <Compile Include="Assets\displayBar2.cs" />
+    <Compile Include="Assets\pauseGame2.cs" />
     <Compile Include="Assets\Scripts\control_3.cs" />
     <Compile Include="Assets\Scripts\display.cs" />
     <Compile Include="Assets\Scripts\display2.cs" />

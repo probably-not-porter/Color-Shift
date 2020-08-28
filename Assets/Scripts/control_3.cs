@@ -72,18 +72,18 @@ public class control_3 : MonoBehaviour
         }
         else
         {
-            if (gameControl.GetComponent<screenControl>().activescreen == 1)
+            if (gameControl.GetComponent<screenControl>().activescreen == 3)
             {
-                gameControl.GetComponent<screenControl>().activescreen = 3;
+                gameControl.GetComponent<screenControl>().activescreen = 2;
             }
         }
     }
 
     void timerEnded() // player ran out of time to chose
     {
-        if (gameControl.GetComponent<screenControl>().activescreen == 1)
+        if (gameControl.GetComponent<screenControl>().activescreen == 3)
         {
-            gameControl.GetComponent<screenControl>().activescreen = 3;
+            gameControl.GetComponent<screenControl>().activescreen = 2;
         }
     }
 

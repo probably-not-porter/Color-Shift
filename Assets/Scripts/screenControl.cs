@@ -32,6 +32,7 @@ public class screenControl : MonoBehaviour
     void Start()
     {
         threePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
+        fourPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
         pausePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
         losePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(offScreen, 0f);
     }
@@ -40,7 +41,7 @@ public class screenControl : MonoBehaviour
         activescreen = 3;
         threeController.GetComponent<control_3>().running = true;
     }
-    public void play4() // start from menu and shift to 3x3
+    public void play4() // start from menu and shift to 4x4
     {
         activescreen = 4;
         fourController.GetComponent<control_4>().running = true;
@@ -53,8 +54,10 @@ public class screenControl : MonoBehaviour
     }
     public void pause()
     {
+        Debug.Log("pause");
         activescreen = 1;
         threeController.GetComponent<control_3>().running = false;
+        fourController.GetComponent<control_4>().running = false;
     }
     public void lost()
     {
@@ -66,6 +69,7 @@ public class screenControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(activescreen);
         if (activescreen == 0) // menu
         {
             menuPanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(onScreen,0f); 

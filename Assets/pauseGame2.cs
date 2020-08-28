@@ -10,35 +10,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class pauseGame : MonoBehaviour
+public class pauseGame2 : MonoBehaviour
 {
     public GameObject controller; // game controller
     public GameObject gameControl; // top level
 
     public GameObject square_panel;
     public GameObject pause_text;
-    public bool gameState = true; 
+    public bool gameState = true;
     public Sprite pause_image;
     public Sprite play_image;
-    
+
 
     public void togglePause() // invert game state on click
     {
         Debug.Log("pause");
         gameState = !gameState;
-        controller.GetComponent<control_3>().running = gameState;
+        controller.GetComponent<control_4>().running = gameState;
     }
     void Update()
     {
-        gameState = controller.GetComponent<control_3>().running;
+        gameState = controller.GetComponent<control_4>().running;
         if (gameState != true) // game is paused
         {
             GetComponent<Image>().sprite = play_image;
-            if (gameControl.GetComponent<screenControl>().activescreen == 3)
+            if (gameControl.GetComponent<screenControl>().activescreen == 4)
             {
                 gameControl.GetComponent<screenControl>().pause();
             }
-            
+
         }
         else // game is running
         {
