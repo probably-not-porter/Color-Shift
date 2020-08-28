@@ -68,12 +68,15 @@ public class control_3 : MonoBehaviour
     {
         if (x == target_square)
         {
+            Debug.Log("correct click");
             WinGame();
         }
         else
         {
+            Debug.Log("incorrect click");
             if (gameControl.GetComponent<screenControl>().activescreen == 3)
             {
+                gameControl.GetComponent<screenControl>().lastscreen = 3;
                 gameControl.GetComponent<screenControl>().activescreen = 2;
             }
         }
@@ -83,6 +86,7 @@ public class control_3 : MonoBehaviour
     {
         if (gameControl.GetComponent<screenControl>().activescreen == 3)
         {
+            gameControl.GetComponent<screenControl>().lastscreen = 3;
             gameControl.GetComponent<screenControl>().activescreen = 2;
         }
     }

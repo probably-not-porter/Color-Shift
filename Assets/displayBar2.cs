@@ -15,7 +15,7 @@ public class displayBar2 : MonoBehaviour
 
     void Update() // update time bar every second
     {
-        float barWidth = controller.GetComponent<control_4>().targetTime / controller.GetComponent<control_4>().roundTime * Screen.width * 0.75f;
+        float barWidth = controller.GetComponent<control_4>().targetTime / controller.GetComponent<control_4>().roundTime * Display.main.systemWidth;
         var selfTransform = transform as RectTransform;
         selfTransform.sizeDelta = new Vector2(barWidth, selfTransform.sizeDelta.y);
     }

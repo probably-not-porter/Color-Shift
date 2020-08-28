@@ -81,6 +81,7 @@ public class control_4 : MonoBehaviour
         {
             if (gameControl.GetComponent<screenControl>().activescreen == 4)
             {
+                gameControl.GetComponent<screenControl>().lastscreen = 4;
                 gameControl.GetComponent<screenControl>().activescreen = 2;
             }
         }
@@ -90,6 +91,7 @@ public class control_4 : MonoBehaviour
     {
         if (gameControl.GetComponent<screenControl>().activescreen == 4)
         {
+            gameControl.GetComponent<screenControl>().lastscreen = 4;
             gameControl.GetComponent<screenControl>().activescreen = 2;
         }
     }
